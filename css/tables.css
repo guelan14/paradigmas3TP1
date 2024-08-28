@@ -25,7 +25,7 @@ h1 {
   align-items: center;
   justify-content: center; /* Centra el contenido horizontalmente */
   flex-direction: column;
-  background-image: url(/imagenes/tables-background.avif);
+  background-image: url(../imagenes/tables-background.avif);
   background-repeat: no-repeat;
   background-size: cover;
 }
