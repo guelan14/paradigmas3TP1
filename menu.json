@@ -1,0 +1,178 @@
+{
+  "entradas": [
+    {
+      "name": "Alitas de Pollo",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 8.99,
+      "description": "Jugosas alitas de pollo marinadas y cocinadas a la perfección, acompañadas de salsa a elegir."
+    },
+    {
+      "name": "Rollos de Primavera",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 7.49,
+      "description": "Deliciosos rollos fritos rellenos de verduras frescas y especias, servidos con salsa agridulce."
+    },
+    {
+      "name": "Bruschetta",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 6.99,
+      "description": "Tostadas de pan cubiertas con una mezcla de tomate, albahaca y ajo, rociadas con aceite de oliva."
+    },
+    {
+      "name": "Pan de Ajo",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 4.99,
+      "description": "Pan crujiente con una generosa capa de mantequilla de ajo y perejil, horneado hasta dorarse."
+    },
+    {
+      "name": "Champiñones Rellenos",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 9.49,
+      "description": "Champiñones frescos rellenos de una mezcla sabrosa de queso y hierbas, gratinados al horno."
+    },
+    {
+      "name": "Palitos de Mozzarella",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "entradas",
+      "price": 8.49,
+      "description": "Bastones de queso mozzarella empanizados y fritos, servidos con salsa marinara."
+    }
+  ],
+  "principales": [
+    {
+      "name": "Filete a la Parrilla",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 18.99,
+      "description": "Filete de carne de alta calidad, cocinado a la parrilla a su gusto, acompañado de guarniciones."
+    },
+    {
+      "name": "Salteado de Verduras",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 12.99,
+      "description": "Mezcla vibrante de verduras frescas salteadas en una salsa ligera y servidas con arroz."
+    },
+    {
+      "name": "Espaguetis Carbonara",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 14.99,
+      "description": "Pasta espaguetis en una cremosa salsa de huevo, queso parmesano, panceta y pimienta negra."
+    },
+    {
+      "name": "Pollo a la Parmesana",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 15.99,
+      "description": "Pechuga de pollo empanizada y cubierta con salsa marinara y queso parmesano, horneada hasta dorarse."
+    },
+    {
+      "name": "Tacos de Carne",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 11.99,
+      "description": "Tacos rellenos de carne sazonada, acompañados de cebolla, cilantro y salsa fresca."
+    },
+    {
+      "name": "Salmón a la Parrilla",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "principales",
+      "price": 19.99,
+      "description": "Filete de salmón fresco, a la parrilla, con un toque de limón y hierbas, acompañado de verduras."
+    }
+  ],
+  "bebidas": [
+    {
+      "name": "Limonada",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 3.99,
+      "description": "Refrescante bebida de limón recién exprimido, endulzada y servida fría."
+    },
+    {
+      "name": "Té Helado",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 2.99,
+      "description": "Té negro frío con un toque de limón, ideal para refrescarse en un día caluroso."
+    },
+    {
+      "name": "Coca Cola",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 2.49,
+      "description": "Clásica bebida gaseosa, ideal para acompañar cualquier plato."
+    },
+    {
+      "name": "Jugo de Naranja",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 3.49,
+      "description": "Jugo natural de naranja, lleno de sabor y vitamina C."
+    },
+    {
+      "name": "Agua Mineral",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 1.99,
+      "description": "Agua mineral fresca, ideal para hidratarse."
+    },
+    {
+      "name": "Smoothie",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "bebidas",
+      "price": 4.99,
+      "description": "Bebida espesa y cremosa a base de frutas frescas y yogurt, disponible en varios sabores."
+    }
+  ],
+  "postres": [
+    {
+      "name": "Tarta de Chocolate",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "postres",
+      "price": 5.99,
+      "description": "Deliciosa tarta de chocolate con una base crujiente y una rica capa de ganache de chocolate."
+    },
+    {
+      "name": "Tarta de Manzana",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "postres",
+      "price": 4.99,
+      "description": "Tarta tradicional de manzana con una corteza dorada y relleno de manzanas especiadas."
+    },
+    {
+      "name": "Cheesecake",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "postres",
+      "price": 6.49,
+      "description": "Cheesecake suave y cremoso, con una base de galleta y cobertura de frutas."
+    },
+    {
+      "name": "Tiramisu",
+      "image": "/imagenes/ensaladasummer.png",
+      "category": "postres",
+      "price": 6.99,
+      "description": "Postre italiano de capas de bizcochos empapados en café y mascarpone."
+    },
+    {
+      "name": "Brownies",
+      "image": "/imagenes/local.jpg",
+      "category": "postres",
+      "price": 3.99,
+      "description": "Brownies de chocolate fudgy con trozos de nueces, perfectos para los amantes del chocolate."
+    },
+    {
+      "name": "Panna Cotta",
+      "image": "/imagenes/special-plate3.jpg",
+      "category": "postres",
+      "price": 5.49,
+      "description": "Delicada panna cotta de vainilla, servida con un coulis de frutas frescas."
+    }
+  ]
+}

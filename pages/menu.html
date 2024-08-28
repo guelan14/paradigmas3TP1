@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PixFood</title>
+    <link rel="stylesheet" href="/css/header.css" />
+    <link rel="stylesheet" href="/css/menu.css" />
+    <link rel="stylesheet" href="/css/footer.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+
+    <script src="/scripts/menu.js"></script>
+  </head>
+  <body class="bg-light-gray">
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="/index.html" class="logo">PixFood</a>
+        </div>
+      </nav>
+    </header>
+    <main>
+      <section class="super-container">
+        <div class="search-container">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Encuentra tu comida"
+          />
+          <i class="fa fa-search search-icon"></i>
+        </div>
+        <div class="container">
+          <div class="menu">
+            <div class="menu-header">
+              <button class="tab color-white active" data-category="entradas">
+                Entradas
+              </button>
+              <button
+                class="tab bg-medium-gray color-dark-gray"
+                data-category="principales"
+              >
+                Principales
+              </button>
+              <button
+                class="tab bg-medium-gray color-dark-gray"
+                data-category="bebidas"
+              >
+                Bebidas
+              </button>
+              <button
+                class="tab bg-medium-gray color-dark-gray"
+                data-category="postres"
+              >
+                Postres
+              </button>
+            </div>
+            <div class="menu-items"></div>
+          </div>
+          <div class="order bg-white">
+            <div class="order-header">
+              <h1 class="color-dark-gray" id="order-title"></h1>
+              <p id="table-info"></p>
+            </div>
+            <div id="call-waiter-message" class="hidden">
+              ¡Solicitud realizada!
+            </div>
+            <button id="call-waiter" class="call-waiter-btn hidden">
+              Llamar al mozo
+            </button>
+
+            <div id="cart">
+              <div id="cart-items"></div>
+            </div>
+
+            <div class="order-summary"></div>
+            <div id="cart-total">
+              <p>Total: <span id="cart-total-amount">$0.00</span></p>
+            </div>
+            <div class="order-actions">
+              <button class="cancel-order bg-tomato color-white">
+                Cancelar
+              </button>
+              <button class="send-order bg-steel-blue color-white">
+                Comprar
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-section">
+          <h4>Contacto</h4>
+          <p>Email: pixfood@gmail.com</p>
+          <p>Teléfono: +34 123 456 789</p>
+        </div>
+        <div class="footer-section">
+          <h4>Dirección</h4>
+          <p>Costanera, 128811, Posadas</p>
+          <p>Código Postal 4567</p>
+        </div>
+        <div class="footer-section">
+          <h4>Horarios</h4>
+          <p>Lunes - Viernes: 20:00 - 24:00</p>
+          <p>Sábado - Domingo: 20:00 - 2:00</p>
+        </div>
+      </div>
+      <div class="social-icons">
+        <a href="https://www.facebook.com" target="_blank">
+          <i class="fa-brands fa-facebook"></i>
+        </a>
+        <a href="https://www.instagram.com" target="_blank">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://www.twitter.com" target="_blank">
+          <i class="fab fa-twitter"></i>
+        </a>
+      </div>
+      <p class="copyright">
+        &copy; PixFood Created By
+        <span> Miguel Angel Neumann </span>
+        <a
+          href="https://www.linkedin.com/in/miguel-angel-neumann-a45639229/"
+          target="_blank"
+          title="Link to Linkedin"
+        >
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+      </p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+/*-------------------------------HEADER*/
+
+.navbar {
+  background-color: rgba(
+    51,
+    51,
+    51,
+    0.2
+  ); /* Opcional: si deseas transparencia, puedes usar rgba */
+  color: white;
+  padding: 1rem 2rem;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  width: 100%;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+}
+
+.logo:hover {
+  transform: scale(1.03);
+  color: #ff4c4c;
+  transition: color 0.3s ease;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li {
+  margin: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  font-weight: 400;
+  transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: #ff4c4c;
+}

@@ -1,0 +1,108 @@
+.container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
+.table-list {
+  width: 60%;
+  padding: 2rem;
+  background-color: #fff;
+}
+
+.order-summary {
+  width: 40%;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  border-left: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+h2 {
+  margin-bottom: 1.5rem;
+  font-size: 1.5rem;
+  color: #555;
+}
+
+.floor-selector {
+  margin-bottom: 2rem;
+}
+
+.floor-button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #e0e0e0;
+  cursor: pointer;
+}
+
+.floor-button.active {
+  background-color: #d4b08b;
+  color: #fff;
+}
+
+.tables {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.table {
+  width: 100%;
+  padding-top: 100%;
+  background-color: #f0f0f0;
+  border-radius: 50%;
+  position: relative;
+  text-align: center;
+}
+
+.table span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 1.2rem;
+  color: #d4b08b;
+  font-weight: bold;
+}
+
+.table-info {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.select-button {
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #557a46;
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.order-details {
+  margin-bottom: 2rem;
+  font-size: 1.2rem;
+}
+
+.empty-order {
+  text-align: center;
+  color: #888;
+}
+
+.empty-order img {
+  margin-bottom: 1rem;
+}
+
+.empty-order p {
+  font-size: 1rem;
+}

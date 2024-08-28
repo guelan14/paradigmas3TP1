@@ -1,0 +1,418 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(to bottom, #2c2c2c, #4c0303);
+}
+
+.titulo-delivery {
+  align-content: center;
+  align-items: center;
+}
+
+#table-info {
+  font-size: 1.8rem;
+}
+
+.super-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 75rem;
+  padding-top: 4.5rem;
+  margin: 0rem auto 0rem auto;
+  height: 100vh;
+}
+
+.container {
+  display: flex;
+  height: 80%;
+}
+
+.search-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+#search-input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+}
+
+#search-button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  border: none;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  border-radius: 0 5px 5px 0;
+}
+
+#search-button:hover {
+  background-color: #0056b3;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.tab {
+  flex: 1;
+  padding: 1rem;
+  background-color: #888888;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 2rem;
+  color: #333333;
+  transition: background-color 0.3s ease;
+  margin: 0.2rem;
+  cursor: pointer;
+  font-size: 1.1rem !important;
+}
+
+.tab:first-of-type {
+  margin-left: 0;
+}
+
+.tab:last-of-type {
+  margin-right: 0;
+}
+
+.tab.active,
+.tab:hover {
+  background-color: #ff4c4c;
+  color: #ffffff; /* Usamos la clase color-white en el HTML */
+}
+
+.menu {
+  margin-right: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.menu-items {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centra los elementos horizontalmente */
+  width: 100%;
+  overflow-y: auto;
+}
+.menu-item {
+  background-color: #f5f5f5;
+  border-radius: 10px;
+  text-align: center;
+  width: 97%; /* Asegura que el item use todo el ancho disponible */
+  transition: 0.2s;
+  display: flex;
+  margin: 0.4rem;
+}
+
+/* Scrollbar en navegadores WebKit */
+.menu-items::-webkit-scrollbar {
+  width: 15px; /* Ancho del scrollbar */
+}
+
+.menu-items::-webkit-scrollbar-track {
+  background: #f5f5f5; /* Color del fondo del track */
+  border-radius: 10px; /* Bordes redondeados para el track */
+}
+
+.menu-items::-webkit-scrollbar-thumb {
+  background-color: #888; /* Color del scrollbar */
+  border-radius: 10px; /* Bordes redondeados para el thumb */
+  border: 2px solid #f5f5f5; /* Espacio alrededor del thumb para crear un margen */
+}
+
+.menu-items::-webkit-scrollbar-thumb:hover {
+  background-color: #555; /* Cambia el color al pasar el ratón */
+}
+
+.menu-item:hover {
+  transform: scale(1.02);
+}
+
+.item-info {
+  text-align: start;
+  padding: 10px 10px 0px 10px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+}
+
+.item-image {
+  display: flex;
+  width: 15%;
+  padding: 0.5rem;
+  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  background-color: #7b3939;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  border-radius: 8px 0px 0px 8px;
+}
+
+.item-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px 8px 8px 8px;
+  object-fit: cover; /* Mantiene la relación de aspecto */
+}
+
+.menu-item .item-info .description p {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: #555;
+}
+
+.menu-item .item-info h2 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-right: 1rem;
+  padding-bottom: 0.2rem;
+}
+
+.menu-item .item-info .icons {
+  margin-top: 10px;
+}
+
+.menu-header {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* Alinea los botones al final horizontalmente */
+  align-items: center; /* Centra los botones verticalmente */
+  padding: 10px; /* Ajusta el padding según tus necesidades */
+}
+
+.button-container p {
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.menu-header button {
+  font-size: small;
+  border: none;
+  cursor: pointer;
+}
+
+.order {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff; /* Usamos la clase bg-white en el HTML */
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
+  flex: 1;
+  height: 100%; /* Asegúrate de que el contenedor padre tenga altura definida */
+}
+
+.order-header h1 {
+  margin: 0;
+  font-size: 1.2rem;
+  font-weight: 800;
+  color: #333333; /* Usamos la clase color-dark-gray en el HTML */
+}
+
+#cart {
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  border-radius: 12px;
+  padding: 1rem;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+#cart p {
+  font-size: 1rem;
+  font-weight: lighter;
+}
+
+#cart h3 {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+  color: #5c6661; /* Usamos la clase color-dark-gray en el HTML */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.cart-item {
+  margin-bottom: 0.5rem;
+}
+
+#cart-items {
+  margin-bottom: 3rem;
+  font-weight: 800;
+}
+
+#cart-total {
+  display: flex;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.5 rem;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.order-header p {
+  margin: 0;
+  color: #888888; /* Usamos la clase color-medium-gray en el HTML */
+}
+
+.order-items {
+  border-top: 1px solid #f7f7f7; /* Usamos la clase bg-light-gray en el HTML */
+  border-bottom: 1px solid #f7f7f7; /* Usamos la clase bg-light-gray en el HTML */
+  margin: 2rem 0;
+  padding: 1rem 0;
+}
+
+.order-summary {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+  color: #333333; /* Usamos la clase color-dark-gray en el HTML */
+}
+
+.order-actions {
+  display: flex;
+  justify-content: space-around;
+}
+
+.cancel-order {
+  background-color: black;
+  color: #ffffff; /* Usamos la clase color-white en el HTML */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 300;
+  padding: 0.75rem 1.5rem; /* Relleno ajustado para aumentar tamaño */
+  font-size: 1rem; /* Tamaño de la fuente moderado */
+}
+
+.send-order {
+  background-color: green; /* Usamos la clase bg-steel-blue en el HTML */
+  color: #ffffff; /* Usamos la clase color-white en el HTML */
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 300;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  transition: 0.2s;
+  padding: 0.75rem 1.5rem; /* Relleno ajustado para aumentar tamaño */
+  font-size: 1rem; /* Tamaño de la fuente moderado */
+}
+
+.cancel-order:hover,
+.send-order:hover {
+  opacity: 0.5;
+  transform: scale(1.02);
+}
+
+.search-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  max-width: 400px;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem; /* Espaciado para el ícono */
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.search-icon {
+  position: absolute;
+  right: 10px;
+  color: #aaa;
+  font-size: 1.2rem;
+  pointer-events: none; /* Evita que el ícono interfiera con la entrada */
+}
+
+.map-container h3 {
+  text-align: center;
+  padding: 2rem;
+}
+
+.btn-minus {
+  background-color: #a03333;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  border-color: transparent;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-minus:hover {
+  background-color: #e43b3b; /* Un tono más oscuro para el efecto hover */
+  cursor: pointer;
+}
+
+.btn-plus {
+  background-color: #f2f2f2;
+  color: #333; /* Cambiar el color de texto a un tono más oscuro para mayor contraste */
+  padding: 0.25rem 0.5rem;
+  text-decoration: none;
+  border-radius: 5px;
+  font-weight: 600;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-plus:hover {
+  background-color: #797979; /* Un tono más oscuro para el efecto hover */
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff1f1f;
+}
+
+.call-waiter-btn {
+  background-color: #f80a0a; /* Color llamativo */
+  color: #fff;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 5px;
+  font-size: 1.25rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-bottom: 0.5rem;
+}
+
+.call-waiter-btn:hover {
+  background-color: #7b2106; /* Color más oscuro al pasar el ratón */
+}
+
+#call-waiter-message {
+  color: #4caf50; /* Color verde para el aviso de éxito */
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.hidden {
+  visibility: hidden;
+}
