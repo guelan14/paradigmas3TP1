@@ -1,3 +1,4 @@
+/* Estilos generales */
 * {
   margin: 0;
   padding: 0;
@@ -25,12 +26,13 @@ html {
   flex-direction: column;
   max-width: 75rem;
   padding-top: 4.5rem;
-  margin: 0rem auto 0rem auto;
+  margin: 0 auto;
   height: 100vh;
 }
 
 .container {
   display: flex;
+  flex-direction: row;
   height: 80%;
 }
 
@@ -80,22 +82,12 @@ html {
   color: #333333;
   transition: background-color 0.3s ease;
   margin: 0.2rem;
-  cursor: pointer;
-  font-size: 1.1rem !important;
-}
-
-.tab:first-of-type {
-  margin-left: 0;
-}
-
-.tab:last-of-type {
-  margin-right: 0;
 }
 
 .tab.active,
 .tab:hover {
   background-color: #ff4c4c;
-  color: #ffffff; /* Usamos la clase color-white en el HTML */
+  color: #ffffff;
 }
 
 .menu {
@@ -108,38 +100,38 @@ html {
 .menu-items {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Centra los elementos horizontalmente */
+  align-items: center;
   width: 100%;
   overflow-y: auto;
 }
+
 .menu-item {
   background-color: #f5f5f5;
   border-radius: 10px;
   text-align: center;
-  width: 97%; /* Asegura que el item use todo el ancho disponible */
+  width: 97%;
   transition: 0.2s;
   display: flex;
   margin: 0.4rem;
 }
 
-/* Scrollbar en navegadores WebKit */
 .menu-items::-webkit-scrollbar {
-  width: 15px; /* Ancho del scrollbar */
+  width: 15px;
 }
 
 .menu-items::-webkit-scrollbar-track {
-  background: #f5f5f5; /* Color del fondo del track */
-  border-radius: 10px; /* Bordes redondeados para el track */
+  background: #f5f5f5;
+  border-radius: 10px;
 }
 
 .menu-items::-webkit-scrollbar-thumb {
-  background-color: #888; /* Color del scrollbar */
-  border-radius: 10px; /* Bordes redondeados para el thumb */
-  border: 2px solid #f5f5f5; /* Espacio alrededor del thumb para crear un margen */
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f5f5f5;
 }
 
 .menu-items::-webkit-scrollbar-thumb:hover {
-  background-color: #555; /* Cambia el color al pasar el ratón */
+  background-color: #555;
 }
 
 .menu-item:hover {
@@ -148,11 +140,11 @@ html {
 
 .item-info {
   text-align: start;
-  padding: 10px 10px 0px 10px;
+  padding: 10px;
   display: flex;
   flex-direction: column;
   flex: 1;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
 .item-image {
@@ -163,15 +155,15 @@ html {
   justify-content: center;
   align-items: center;
   background-color: #7b3939;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
-  border-radius: 8px 0px 0px 8px;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+  border-radius: 8px 0 0 8px;
 }
 
 .item-image img {
   width: 100%;
   height: auto;
-  border-radius: 8px 8px 8px 8px;
-  object-fit: cover; /* Mantiene la relación de aspecto */
+  border-radius: 8px;
+  object-fit: cover;
 }
 
 .menu-item .item-info .description p {
@@ -199,9 +191,9 @@ html {
 
 .button-container {
   display: flex;
-  justify-content: flex-end; /* Alinea los botones al final horizontalmente */
-  align-items: center; /* Centra los botones verticalmente */
-  padding: 10px; /* Ajusta el padding según tus necesidades */
+  justify-content: flex-end;
+  align-items: center;
+  padding: 10px;
 }
 
 .button-container p {
@@ -218,23 +210,23 @@ html {
 .order {
   display: flex;
   flex-direction: column;
-  background-color: #ffffff; /* Usamos la clase bg-white en el HTML */
+  background-color: #ffffff;
   border-radius: 0.5rem;
   padding: 1rem;
   box-shadow: 0 0.2rem 0.4rem rgba(0, 0, 0, 0.1);
   flex: 1;
-  height: 100%; /* Asegúrate de que el contenedor padre tenga altura definida */
+  height: 100%;
 }
 
 .order-header h1 {
   margin: 0;
   font-size: 1.2rem;
   font-weight: 800;
-  color: #333333; /* Usamos la clase color-dark-gray en el HTML */
+  color: #333333;
 }
 
 #cart {
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   border-radius: 12px;
   padding: 1rem;
   flex-grow: 1;
@@ -250,7 +242,7 @@ html {
   margin: 0;
   font-size: 1rem;
   font-weight: 800;
-  color: #5c6661; /* Usamos la clase color-dark-gray en el HTML */
+  color: #5c6661;
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -268,19 +260,19 @@ html {
   display: flex;
   justify-content: center;
   font-weight: 800;
-  font-size: 1.5 rem;
+  font-size: 1.5rem;
   align-items: center;
   margin-bottom: 0.5rem;
 }
 
 .order-header p {
   margin: 0;
-  color: #888888; /* Usamos la clase color-medium-gray en el HTML */
+  color: #888888;
 }
 
 .order-items {
-  border-top: 1px solid #f7f7f7; /* Usamos la clase bg-light-gray en el HTML */
-  border-bottom: 1px solid #f7f7f7; /* Usamos la clase bg-light-gray en el HTML */
+  border-top: 1px solid #f7f7f7;
+  border-bottom: 1px solid #f7f7f7;
   margin: 2rem 0;
   padding: 1rem 0;
 }
@@ -288,7 +280,7 @@ html {
 .order-summary {
   margin-bottom: 0.5rem;
   font-size: 1.1rem;
-  color: #333333; /* Usamos la clase color-dark-gray en el HTML */
+  color: #333333;
 }
 
 .order-actions {
@@ -298,26 +290,26 @@ html {
 
 .cancel-order {
   background-color: black;
-  color: #ffffff; /* Usamos la clase color-white en el HTML */
+  color: #ffffff;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: 300;
-  padding: 0.75rem 1.5rem; /* Relleno ajustado para aumentar tamaño */
-  font-size: 1rem; /* Tamaño de la fuente moderado */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
 }
 
 .send-order {
-  background-color: green; /* Usamos la clase bg-steel-blue en el HTML */
-  color: #ffffff; /* Usamos la clase color-white en el HTML */
+  background-color: green;
+  color: #ffffff;
   border: none;
   border-radius: 0.5rem;
   cursor: pointer;
   font-weight: 300;
-  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5); /* Sombra interna */
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
   transition: 0.2s;
-  padding: 0.75rem 1.5rem; /* Relleno ajustado para aumentar tamaño */
-  font-size: 1rem; /* Tamaño de la fuente moderado */
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
 }
 
 .cancel-order:hover,
@@ -335,7 +327,7 @@ html {
 
 #search-input {
   width: 100%;
-  padding: 0.5rem 2.5rem 0.5rem 0.5rem; /* Espaciado para el ícono */
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -346,7 +338,7 @@ html {
   right: 10px;
   color: #aaa;
   font-size: 1.2rem;
-  pointer-events: none; /* Evita que el ícono interfiera con la entrada */
+  pointer-events: none;
 }
 
 .map-container h3 {
@@ -367,13 +359,14 @@ html {
 }
 
 .btn-minus:hover {
-  background-color: #e43b3b; /* Un tono más oscuro para el efecto hover */
+  background-color: #e43b3b;
   cursor: pointer;
 }
 
 .btn-plus {
-  background-color: #f2f2f2;
-  color: #333; /* Cambiar el color de texto a un tono más oscuro para mayor contraste */
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
   padding: 0.25rem 0.5rem;
   text-decoration: none;
   border-radius: 5px;
@@ -382,7 +375,7 @@ html {
 }
 
 .btn-plus:hover {
-  background-color: #797979; /* Un tono más oscuro para el efecto hover */
+  background-color: #797979;
   cursor: pointer;
 }
 
@@ -391,7 +384,7 @@ html {
 }
 
 .call-waiter-btn {
-  background-color: #f80a0a; /* Color llamativo */
+  background-color: #f80a0a;
   color: #fff;
   border: none;
   padding: 0.75rem 1.5rem;
@@ -404,15 +397,62 @@ html {
 }
 
 .call-waiter-btn:hover {
-  background-color: #7b2106; /* Color más oscuro al pasar el ratón */
+  background-color: #7b2106;
 }
 
 #call-waiter-message {
-  color: #4caf50; /* Color verde para el aviso de éxito */
+  color: #4caf50;
   font-size: 1rem;
   font-weight: bold;
 }
 
 .hidden {
   visibility: hidden;
+}
+
+/* Media Queries para pantallas de hasta 500px */
+@media (max-width: 500px) {
+  .super-container {
+    padding: 1rem;
+    padding-top: 4rem;
+    height: auto; /* Ajustar altura para permitir contenido flexible */
+  }
+
+  .item-image {
+    display: none;
+  }
+
+  .container {
+    flex-direction: column; /* Cambiar la dirección del flex para apilar elementos verticalmente */
+  }
+
+  .menu {
+    width: 100%; /* Hacer que el menú ocupe todo el ancho disponible */
+    margin-right: 0; /* Eliminar margen derecho para que ocupe el 100% del ancho */
+    height: 100vh; /* Ajustar altura para permitir contenido flexible */
+    overflow-y: scroll;
+  }
+
+  .order {
+    width: 100%; /* Hacer que el área de pedidos ocupe todo el ancho disponible */
+    margin-top: 1rem; /* Añadir margen superior para separar el menú del área de pedidos */
+  }
+
+  .menu-header {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+
+  .order-summary,
+  #cart-total,
+  .order-actions {
+    font-size: 1rem; /* Ajustar el tamaño de fuente para pantallas pequeñas */
+  }
+
+  .order-header h1 {
+    font-size: 1.5rem; /* Ajustar el tamaño de fuente del título del área de pedidos */
+  }
 }

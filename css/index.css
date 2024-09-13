@@ -399,8 +399,7 @@ tr:nth-child(even) {
 
 @media (max-width: 500px) {
   table {
-    width: 100%; /* Asegúrate de que la tabla se ajuste al contenedor */
-    max-width: 300px;
+    width: 80%; /* Asegúrate de que la tabla se ajuste al contenedor */
   }
 
   th,
