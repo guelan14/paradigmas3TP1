@@ -1,3 +1,4 @@
+/* Estilos generales (desktop-first) */
 * {
   margin: 0;
   padding: 0;
@@ -103,7 +104,7 @@ html {
 
 .about-content {
   display: flex;
-  align-items: flex-start; /* Alinea los elementos al inicio del contenedor verticalmente */
+  align-items: flex-start;
   justify-content: center;
   gap: 2rem;
   flex-wrap: wrap;
@@ -229,7 +230,6 @@ tr:nth-child(even) {
 }
 
 /* POP UP */
-/* Estilos para el pop-up */
 .dish-popup {
   display: none; /* Inicialmente oculto */
   position: fixed;
@@ -309,4 +309,140 @@ tr:nth-child(even) {
   width: 100%;
   height: 450px;
   border: 0;
+}
+
+/* Media Queries para hacer el diseño responsivo */
+@media (max-width: 1200px) {
+  .hero h1 {
+    font-size: 6rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
+  }
+
+  .menu-container {
+    width: 90%;
+  }
+
+  .menu-item {
+    width: 45%;
+  }
+
+  .about-content img {
+    max-width: 50%;
+  }
+
+  .contact-form {
+    width: 90%;
+  }
+}
+
+@media (max-width: 990px) {
+  .hero h1 {
+    font-size: 5rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .menu-item {
+    width: 100%;
+  }
+
+  .about-content img {
+    max-width: 100%;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+
+  table {
+    width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .hero p {
+    font-size: 0.8rem;
+  }
+
+  .menu-item {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+
+  .about-content {
+    flex-direction: column;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.9rem;
+  }
+
+  .popup-content {
+    width: 90%;
+    max-width: 90%;
+  }
+
+  .map-iframe {
+    height: 300px;
+  }
+}
+
+@media (max-width: 500px) {
+  table {
+    width: 100%; /* Asegúrate de que la tabla se ajuste al contenedor */
+    max-width: 300px;
+  }
+
+  th,
+  td {
+    padding: 0.4rem; /* Reducir el padding en pantallas pequeñas */
+    font-size: 0.8rem; /* Ajustar el tamaño de fuente si es necesario */
+  }
+
+  .menu-section,
+  .about-section,
+  .menu-section,
+  .info-section,
+  .contact-section,
+  .table-section {
+    padding: 2rem 0.5rem;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 3rem;
+  }
+
+  .cta-buttons {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .cta-buttons .btn {
+    margin: 0.3rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.8rem;
+  }
+
+  .popup-content {
+    width: 95%;
+    max-width: 95%;
+  }
 }

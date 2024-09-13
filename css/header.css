@@ -1,12 +1,7 @@
 /*-------------------------------HEADER*/
 
 .navbar {
-  background-color: rgba(
-    51,
-    51,
-    51,
-    0.2
-  ); /* Opcional: si deseas transparencia, puedes usar rgba */
+  background-color: rgba(51, 51, 51, 0.2);
   color: white;
   padding: 1rem 2rem;
   position: fixed;
@@ -54,4 +49,54 @@
 
 .nav-links a:hover {
   color: #ff4c4c;
+}
+
+/* Ocultar el ícono de hamburguesa en pantallas grandes */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: white;
+}
+
+/* Estilos móviles */
+@media (max-width: 580px) {
+  /* Cambiar la dirección de la flexbox a columna en pantallas pequeñas */
+  .navbar-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  /* Ocultar los enlaces de navegación por defecto */
+  .nav-links {
+    position: fixed;
+    top: 60px;
+    right: 0;
+    height: 100%;
+    width: 200px;
+    background-color: rgba(51, 51, 51, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  /* Mostrar ícono de hamburguesa en pantallas pequeñas */
+  .hamburger {
+    display: block;
+  }
+
+  /* Cuando se activa el menú de hamburguesa */
+  .nav-links.active {
+    transform: translateX(0);
+  }
+
+  /* Estilo para los enlaces del menú hamburguesa en vertical */
+  .nav-links li {
+    margin: 1rem 0;
+  }
 }
