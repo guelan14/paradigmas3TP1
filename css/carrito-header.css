@@ -1,10 +1,14 @@
 .navbar-container {
   width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
   display: flex;
   align-items: center;
   background-color: #505050;
   padding-left: 1rem;
   padding: 1rem;
+  padding-left: 2rem;
 }
 
 .back-arrow {
