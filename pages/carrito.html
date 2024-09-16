@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="../css/carrito.css" />
+    <link rel="stylesheet" href="../css/carrito-header.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <header>
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="javascript:void(0);" class="back-arrow" onclick="goBack()">
+          <i class="fas fa-arrow-left"></i>
+        </a>
+      </div>
+    </nav>
+  </header>
+  <body>
+    <section class="cart-info">
+    <div class="cart-page">
+      <header class="cart-header">
+        <button id="delivery" class="mode-btn active">Delivery</button>
+        <button id="pickup" class="mode-btn">Retiro</button>
+      </header>
+      <div id="cart">
+        <div id="cart-items"></div>
+      </div>
+      <div>
+        <h2>Te sienta algo mas?</h2>
+        <a href="#" class="">Volver al menu</a>
+      </div>
+      <section class="cart-summary">
+        <h2>Resumen</h2>
+        <div class="total">
+          <ul>
+            <li>Productos: <span id="cart-total-amount"></span></li>
+            <li>Envio</li>
+            <li>Tarifa de Servicio</li>
+          </ul>
+          <h3></h3>
+        </div>
+        <a href="confirmacion.html" id="checkout" class="checkout-btn">Ir a Pagar</a>
+      </section>
+    </div>
+
+    <script src="../scripts/carrito.js"></script>
+  </body>
+</html>

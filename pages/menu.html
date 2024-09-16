@@ -6,13 +6,10 @@
     <title>PixFood</title>
     <link rel="stylesheet" href="../css/header.css" />
     <link rel="stylesheet" href="../css/menu.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
-
-    <script src="../scripts/menu.js"></script>
   </head>
   <body class="bg-light-gray">
     <header>
@@ -77,60 +74,23 @@
 
             <div class="order-summary"></div>
             <div id="cart-total">
-              <p>Total: <span id="cart-total-amount">$0.00</span></p>
+              <p>SubTotal: <span id="cart-total-amount">$0.00</span></p>
             </div>
             <div class="order-actions">
-              <button class="cancel-order bg-tomato color-white">
-                Cancelar
-              </button>
-              <button class="send-order bg-steel-blue color-white">
-                Comprar
-              </button>
+              <a href="carrito.html" class="send-order"> Ir al Carrito </a>
             </div>
           </div>
+          <div class="notifications-container"></div>
         </div>
       </section>
+      <div class="subtotal-container">
+        <div class="total">
+          Subtotal del pedido: <span class="total-amount">$0.00</span>
+        </div>
+        <a href="carrito.html" class="btn-cart">Ir al carrito</a>
+      </div>
     </main>
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-section">
-          <h4>Contacto</h4>
-          <p>Email: pixfood@gmail.com</p>
-          <p>Teléfono: +34 123 456 789</p>
-        </div>
-        <div class="footer-section">
-          <h4>Dirección</h4>
-          <p>Costanera, 128811, Posadas</p>
-          <p>Código Postal 4567</p>
-        </div>
-        <div class="footer-section">
-          <h4>Horarios</h4>
-          <p>Lunes - Viernes: 20:00 - 24:00</p>
-          <p>Sábado - Domingo: 20:00 - 2:00</p>
-        </div>
-      </div>
-      <div class="social-icons">
-        <a href="https://www.facebook.com" target="_blank">
-          <i class="fa-brands fa-facebook"></i>
-        </a>
-        <a href="https://www.instagram.com" target="_blank">
-          <i class="fab fa-instagram"></i>
-        </a>
-        <a href="https://www.twitter.com" target="_blank">
-          <i class="fab fa-twitter"></i>
-        </a>
-      </div>
-      <p class="copyright">
-        &copy; PixFood Created By
-        <span> Miguel Angel Neumann </span>
-        <a
-          href="https://www.linkedin.com/in/miguel-angel-neumann-a45639229/"
-          target="_blank"
-          title="Link to Linkedin"
-        >
-          <i class="fab fa-linkedin-in"></i>
-        </a>
-      </p>
-    </footer>
+    <script src="../scripts/carrito.js"></script>
+    <script src="../scripts/menu.js"></script>
   </body>
 </html>

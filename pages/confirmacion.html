@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Carrito de Compra</title>
+    <link rel="stylesheet" href="../css/carrito.css" />
+    <link rel="stylesheet" href="../css/carrito-header.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="navbar-container">
+          <a href="javascript:void(0);" class="back-arrow" onclick="goBack()">
+            <i class="fas fa-arrow-left"></i>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <div class="cart-page">
+      <div id="cart" style="display: none">
+        <div id="cart-items"></div>
+      </div>
+      <section class="buy-confirmation">
+        <div class="delivery-detailes"><h2>Detalle de la Entrega</h2></div>
+        <div class="payment-method">
+          <h2>Medios de Pago</h2>
+        </div>
+      </section>
+      <section class="cart-summary">
+        <h2>Resumen</h2>
+        <div class="total">
+          <ul>
+            <li>Productos: <span id="cart-total-amount"></span></li>
+            <li>Envio</li>
+            <li>Tarifa de Servicio</li>
+          </ul>
+        </div>
+        <a href="confirmacion.html" id="checkout" class="checkout-btn">Pagar</a>
+      </section>
+    </div>
+    <a></a>
+    <script src="../scripts/carrito.js"></script>
+  </body>
+</html>
