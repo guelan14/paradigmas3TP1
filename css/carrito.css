@@ -1,0 +1,140 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f8f8;
+  background: linear-gradient(to bottom, #2c2c2c, #4c0303);
+  min-height: 100vh;
+  margin: 0;
+}
+
+.cart-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.cart-page {
+  width: 80%;
+  margin-top: 3rem;
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.cart-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.mode-btn {
+  padding: 10px 20px;
+  margin: 1rem;
+  font-size: 16px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  background-color: #fff;
+  cursor: pointer;
+}
+
+.mode-btn.active {
+  border-color: #007bff;
+  background-color: #007bff;
+  color: white;
+}
+
+.cart-items {
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+  padding: 20px 0;
+}
+
+.cart-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.cart-item p {
+  margin: 0;
+}
+
+button {
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.cart-summary {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.total {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.checkout-btn {
+  padding: 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+}
+
+.btn-plus,
+.btn-minus {
+  padding: 5px 10px;
+  font-size: 16px;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn-minus:hover {
+  background-color: #e43b3b;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+  cursor: pointer;
+}
+
+.btn-plus {
+  background-color: #4caf50; /* Color de fondo para btn-plus */
+}
+
+.btn-plus:hover {
+  background-color: #79d279; /* Color más claro al hacer hover */
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15); /* Sombra más pronunciada al hacer hover */
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ff1f1f;
+}
+
+@media (max-width: 700px) {
+  .cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+
+  .item-controls {
+    display: flex;
+    align-items: center;
+  }
+
+  .item-quantity {
+    font-size: 16px;
+  }
+}

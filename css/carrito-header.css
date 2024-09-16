@@ -1,0 +1,18 @@
+.navbar-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  background-color: #505050;
+  padding-left: 1rem;
+  padding: 1rem;
+}
+
+.back-arrow {
+  font-size: 24px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.back-arrow i {
+  display: inline-block;
+}
