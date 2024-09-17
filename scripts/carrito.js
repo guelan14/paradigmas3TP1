@@ -68,6 +68,7 @@ function loadCart() {
 function updateCartUI() {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotalAmount = document.getElementById("cart-total-amount");
+  const subtotalAmount = document.querySelector(".total-amount"); // Selecciona el subtotal en el segundo contenedor
   cartItemsContainer.innerHTML = "";
 
   let total = 0;
@@ -95,18 +96,47 @@ function updateCartUI() {
   }
 
   cartTotalAmount.textContent = `$${total.toFixed(2)}`;
+  subtotalAmount.textContent = `$${total.toFixed(2)}`;
 }
-
-// Cargar carrito cuando el documento esté listo
-document.addEventListener("DOMContentLoaded", loadCart);
+loadCart();
 
 // Event listener para cancelar la orden
 document.addEventListener("DOMContentLoaded", function () {
-  document
-    .querySelector(".cancel-order")
-    .addEventListener("click", function () {
-      if (confirm("¿Estás seguro de que deseas cancelar?")) {
-        clearCart();
-      }
-    });
+  const deliveryButton = document.getElementById("delivery");
+  const pickupButton = document.getElementById("pickup");
+  const cartHeader = document.querySelector(".cart-header");
+  const checkoutButton = document.getElementById("checkout");
+  const sendOrderButton = document.getElementById("send-order");
+
+  // Función para manejar el modo según la URL
+  function handleMode() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const mode = urlParams.get("mode");
+
+    if (mode === "local") {
+      console.log("Modo Local Activado");
+      // Si el modo es local, oculta los botones de selección y muestra el botón de enviar orden
+      cartHeader.classList.add("hidden");
+      checkoutButton.classList.add("hidden");
+      sendOrderButton.classList.remove("hidden");
+    } else {
+      // Si el modo no es local, muestra los botones de selección y el botón de pago
+      cartHeader.classList.remove("hidden");
+      checkoutButton.classList.remove("hidden");
+      sendOrderButton.classList.add("hidden");
+    }
+  }
+
+  deliveryButton.addEventListener("click", () => {
+    deliveryButton.classList.add("active");
+    pickupButton.classList.remove("active");
+  });
+
+  pickupButton.addEventListener("click", () => {
+    pickupButton.classList.add("active");
+    deliveryButton.classList.remove("active");
+  });
+
+  // Llama a la función para manejar el modo
+  handleMode();
 });

@@ -11,6 +11,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
+
   <body>
     <header>
       <nav class="navbar">
@@ -35,20 +36,30 @@
 
         <div class="back-to-menu">
           <h2>Te sienta algo más?</h2>
-          <a href="#" class="btn-back">Volver al menú</a>
+          <a href="javascript:void(0);" class="back-arrow" onclick="goBack()"
+            >Volver al menú</a
+          >
         </div>
 
         <section class="cart-summary">
           <h2>Resumen</h2>
           <div class="total">
             <ul>
-              <li>Productos: <span id="cart-total-amount"></span></li>
+              <li>SubTotal Productos: <span id="cart-total-amount"></span></li>
               <li>Envio</li>
               <li>Tarifa de Servicio</li>
+              <li>Total: <span class="total-amount"></span></li>
             </ul>
           </div>
           <a href="confirmacion.html" id="checkout" class="checkout-btn"
             >Ir a Pagar</a
+          >
+          <!-- Botón de enviar orden (oculto por defecto) -->
+          <a
+            href="javascript:void(0);"
+            id="send-order"
+            class="checkout-btn hidden"
+            >Enviar Orden</a
           >
         </section>
       </div>

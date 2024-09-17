@@ -44,24 +44,39 @@ body {
   margin-bottom: 30px;
 }
 
+.cart-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 0;
+}
+
 .mode-btn {
-  padding: 12px 25px;
-  margin: 0 10px;
+  padding: 12px 20px;
   font-size: 16px;
-  border: none;
-  border-radius: 50px;
-  background-color: #f0f0f0;
+  border: 1px solid #000000; /* Borde de 2px, sólido, color negro */
+  border-radius: 8px;
+  background-color: #f6f6f6;
+  color: #000000;
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: background-color 0.3s, box-shadow 0.3s;
+  flex: 1;
+  margin: 0 5px;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
 }
 
 .mode-btn.active {
-  background-color: #007bff;
-  color: #fff;
+  background-color: #696969; /* Color para el botón activo */
+  color: #333333; /* Color del texto para el botón activo */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para el botón activo */
 }
 
-.mode-btn:hover {
-  background-color: #0056b3;
+.mode-btn:not(.active):hover {
+  background-color: #464646; /* Color al pasar el cursor sobre el botón inactivo */
 }
 
 .cart-summary h2 {
@@ -97,6 +112,7 @@ body {
   cursor: pointer;
   text-align: center;
   transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none;
 }
 
 .checkout-btn:hover {
@@ -170,6 +186,49 @@ body {
 .btn-back:hover {
   background-color: #0056b3;
   transform: scale(1.05);
+}
+
+.buy-confirmation {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+}
+
+.buy-confirmation h2 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid #e0e0e0;
+  cursor: pointer; /* Hace que el título sea clicable */
+  transition: color 0.3s ease, border-bottom-color 0.3s ease;
+}
+
+.buy-confirmation h2.selectable:hover {
+  color: #007bff; /* Cambia el color cuando se pasa el cursor */
+  border-bottom-color: #007bff; /* Cambia el color del borde inferior */
+}
+
+.delivery-details,
+.payment-method {
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.delivery-details {
+  border-left: 5px solid #4caf50;
+}
+
+.payment-method {
+  border-left: 5px solid #2196f3;
 }
 
 @media (max-width: 700px) {

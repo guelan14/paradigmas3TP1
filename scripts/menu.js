@@ -87,6 +87,47 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
+  // Función para obtener los parámetros de la URL actual
+  function getUrlParams() {
+    const params = new URLSearchParams(window.location.search);
+    return {
+      mode: params.get("mode"),
+      table: params.get("table"),
+    };
+  }
+
+  // Obtener el botón de "Ir al carrito"
+  const cartButton = document.querySelector(".btn-cart");
+  const sendOrderButton = document.querySelector(".send-order");
+
+  // Asignar los parámetros a la URL del carrito al hacer clic en el enlace
+  function updateCartLink(button) {
+    button.addEventListener("click", function (event) {
+      event.preventDefault(); // Evitar la redirección automática
+
+      const { mode, table } = getUrlParams();
+
+      // Verificar que ambos parámetros existan
+      if (mode && table) {
+        // Construir la nueva URL con los parámetros
+        const newUrl = `carrito.html?mode=${mode}&table=${table}`;
+
+        // Redirigir a la nueva URL
+        window.location.href = newUrl;
+      } else {
+        // Construir la nueva URL con los parámetros
+        const newUrl = `carrito.html?mode=${mode}`;
+
+        // Redirigir a la nueva URL
+        window.location.href = newUrl;
+      }
+    });
+  }
+
+  // Llamar a la función para ambos botones
+  if (cartButton) updateCartLink(cartButton);
+  if (sendOrderButton) updateCartLink(sendOrderButton);
+
   // Cargar menú
   loadMenu();
 });

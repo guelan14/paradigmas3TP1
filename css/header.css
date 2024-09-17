@@ -1,7 +1,7 @@
 /*-------------------------------HEADER*/
 
 .navbar {
-  background-color: rgba(51, 51, 51, 0.2);
+  background-color: rgba(51, 51, 51, 0.5);
   color: white;
   padding: 1rem 1rem 1rem 4rem;
   position: fixed;
@@ -29,6 +29,7 @@
   transition: color 0.3s ease;
 }
 
+/* Estilo de enlaces */
 .nav-links {
   list-style: none;
   display: flex;
@@ -44,11 +45,28 @@
   color: white;
   font-size: 1rem;
   font-weight: 400;
+  position: relative;
   transition: color 0.3s ease;
 }
 
 .nav-links a:hover {
   color: #ff4c4c;
+}
+
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #ff4c4c;
+  transform: scaleX(0); /* Línea invisible inicialmente */
+  transition: transform 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  transform: scaleX(1); /* Aparece la línea en hover */
 }
 
 /* Ocultar el ícono de hamburguesa en pantallas grandes */
