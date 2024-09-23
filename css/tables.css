@@ -15,15 +15,16 @@ h1 {
   font-size: 2rem;
   margin-bottom: 1rem;
   font-weight: 600;
-  letter-spacing: 2px;
   color: white;
+  margin-top: 5rem;
+  text-align: center;
 }
 
 .tables {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: center; /* Centra el contenido horizontalmente */
+  justify-content: center;
   flex-direction: column;
   background-image: url(../imagenes/tables-background.avif);
   background-repeat: no-repeat;
@@ -37,13 +38,13 @@ h1 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.6); /* Ajusta el color y la opacidad aquí */
-  z-index: 0; /* Asegura que esté detrás del contenido */
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 0;
 }
 
 .tables > * {
-  position: relative; /* Asegura que el contenido esté por encima del pseudo-elemento */
-  z-index: 1; /* Asegura que el contenido esté por encima del pseudo-elemento */
+  position: relative;
+  z-index: 1;
 }
 
 .tables-container {
@@ -52,8 +53,8 @@ h1 {
   gap: 1rem;
   max-width: 60%;
   padding: 2rem;
-  margin: 0 auto; /* Centra la tabla en la página */
-  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
+  margin: 0 auto;
+  box-sizing: border-box;
 }
 
 .table {
@@ -61,67 +62,27 @@ h1 {
   text-align: center;
   cursor: pointer;
   transition: transform 0.3s, box-shadow 0.3s;
+  background-color: rgba(0, 0, 0, 0.5);
   padding: 10px;
   border-radius: 10px;
-  overflow: hidden; /* Asegura que los elementos hijos no desborden */
-  width: 100%; /* Asegura que el contenedor de la mesa no sea más ancho que la celda del grid */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras suaves para un efecto moderno */
+  overflow: hidden;
+  width: 100%;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .table img {
-  width: 100%; /* Ajusta la imagen al ancho del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
+  width: 100%;
+  height: auto;
   border-radius: 10px;
-  display: block; /* Evita espacios debajo de las imágenes */
-  border: none; /* Elimina bordes indeseados */
-}
-
-.table .table-number {
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  color: white;
-  padding: 5px 10;
-}
-.tables-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
-  gap: 1rem;
-  max-width: 60%;
-  padding: 2rem;
-  margin: 0 auto; /* Centra la tabla en la página */
-  box-sizing: border-box; /* Asegura que el padding no afecte el tamaño total */
-}
-
-.table {
-  position: relative;
-  text-align: center;
-  cursor: pointer;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: rgba(0, 0, 0, 0.5); /* Fondo claro para destacar */
-  padding: 10px;
-  border-radius: 10px;
-  overflow: hidden; /* Asegura que los elementos hijos no desborden */
-  width: 100%; /* Asegura que el contenedor de la mesa no sea más ancho que la celda del grid */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombras suaves para un efecto moderno */
-}
-
-.table img {
-  width: 100%; /* Ajusta la imagen al ancho del contenedor */
-  height: auto; /* Mantiene la proporción de la imagen */
-  border-radius: 10px;
-  display: block; /* Evita espacios debajo de las imágenes */
-  border: none; /* Elimina bordes indeseados */
+  display: block;
+  border: none;
 }
 
 .table .table-number {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(
-    -50%,
-    -50%
-  ); /* Centra el texto usando transformaciones */
+  transform: translate(-50%, -50%);
   color: white;
   padding: 5px 10px;
   border-radius: 5px;
@@ -130,10 +91,54 @@ h1 {
 
 .table:hover {
   transform: scale(1.05);
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Resalta más la mesa al hacer hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
 }
 
 .occupied img {
   opacity: 0.2;
-  pointer-events: none; /* No se puede hacer clic en mesas ocupadas */
+  pointer-events: none;
+}
+
+/* Media Queries para Responsividad */
+
+/* Para pantallas pequeñas como móviles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .tables-container {
+    max-width: 90%;
+    padding: 1rem;
+  }
+
+  .table .table-number {
+    font-size: 0.8rem;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem;
+  }
+
+  .tables-container {
+    grid-template-columns: repeat(auto-fit, minmax(6rem, 1fr));
+  }
+
+  .table .table-number {
+    font-size: 0.7rem;
+  }
+}
+
+/* Para pantallas grandes como tablets o desktops */
+@media (min-width: 1024px) {
+  .tables-container {
+    max-width: 60%; /* Mantén el tamaño original */
+  }
+
+  .table .table-number {
+    font-size: 0.9rem;
+  }
 }
