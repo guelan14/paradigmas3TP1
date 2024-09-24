@@ -4,8 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Carrito de Compra</title>
-    <link rel="stylesheet" href="../css/carrito.css" />
-    <link rel="stylesheet" href="../css/carrito-header.css" />
+    <link rel="stylesheet" href="../css/cart.css" />
+    <link rel="stylesheet" href="../css/cart-header.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -26,8 +26,8 @@
     <section class="cart-info">
       <div class="cart-page">
         <header class="cart-header">
-          <button id="delivery" class="mode-btn active">Delivery</button>
-          <button id="pickup" class="mode-btn">Retiro</button>
+          <button id="delivery" class="mode-btn">Delivery</button>
+          <button id="pickup" class="mode-btn active">Retiro</button>
         </header>
 
         <div id="cart">
@@ -35,7 +35,7 @@
         </div>
 
         <div class="back-to-menu">
-          <h2>Te sienta algo más?</h2>
+          <h2>Necesitas algo más?</h2>
           <a href="javascript:void(0);" class="back-arrow" onclick="goBack()"
             >Volver al menú</a
           >
@@ -45,13 +45,17 @@
           <h2>Resumen</h2>
           <div class="total">
             <ul>
-              <li>SubTotal Productos: <span id="cart-total-amount"></span></li>
-              <li>Envio</li>
-              <li>Tarifa de Servicio</li>
-              <li>Total: <span class="total-amount"></span></li>
+              <li>SubTotal: <span class="total-amount"></span></li>
+              <li class="shipping-fee">
+                Envío: <span id="shipping-cost"></span>
+              </li>
+              <li class="service-fee">
+                Tarifa de Servicio: <span id="service-fee">$1.00</span>
+              </li>
+              <li>Total: <span id="cart-total-amount"></span></li>
             </ul>
           </div>
-          <a href="confirmacion.html" id="checkout" class="checkout-btn"
+          <a href="confirmation.html" id="checkout" class="checkout-btn"
             >Ir a Pagar</a
           >
           <!-- Botón de enviar orden (oculto por defecto) -->
@@ -61,10 +65,10 @@
             class="checkout-btn hidden"
             >Enviar Orden</a
           >
+          <div class="notifications-container"></div>
         </section>
       </div>
     </section>
-    <script src="../scripts/cartLoad.js"></script>
-    <script src="../scripts/carrito.js"></script>
+    <script src="../scripts/cart.js"></script>
   </body>
 </html>

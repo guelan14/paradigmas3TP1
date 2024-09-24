@@ -102,22 +102,9 @@ body {
   border-bottom: 1px solid #ccc;
 }
 
-.checkout-btn {
-  width: 100%;
-  padding: 15px;
-  background-color: #28a745;
-  color: white;
-  font-size: 18px;
-  border-radius: 50px;
-  cursor: pointer;
-  text-align: center;
-  transition: background-color 0.3s, transform 0.2s;
-  text-decoration: none;
-}
-
-.checkout-btn:hover {
-  background-color: #218838;
-  transform: scale(1.05);
+.total ul li:last-child {
+  font-weight: bold; /* Negrita */
+  font-size: 20px; /* Aumentar el tamaño del texto (puedes ajustar el valor) */
 }
 
 .cart-item {
@@ -132,20 +119,37 @@ body {
   margin: 0;
 }
 
+.checkout-btn {
+  padding: 15px;
+  background-color: #28a745;
+  color: white;
+  font-size: 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.3s, transform 0.2s;
+  text-decoration: none;
+}
+
+.checkout-btn:hover {
+  background-color: #218838;
+  transform: scale(1.05);
+}
+
 .btn-plus,
 .btn-minus {
-  padding: 8px 16px;
+  padding: 6px 14px;
   margin: 0 5px;
   font-size: 16px;
   cursor: pointer;
   border: none;
-  border-radius: 50px;
+  border-radius: 10px;
   color: white;
   transition: background-color 0.3s, transform 0.2s;
 }
 
 .btn-minus {
-  background-color: #e43b3b;
+  background-color: #c1c1c1;
 }
 
 .btn-plus {
@@ -177,10 +181,12 @@ body {
   text-align: center;
 }
 
-.back-to-menu {
-  background-image: url(../imagenes/papasfritas.png);
-  background-repeat: no-repeat;
-  background-size: cover;
+.back-to-menu .back-arrow {
+  color: rgb(255, 255, 255);
+  background-color: #464646;
+  border-radius: 10px;
+  padding: 0.5rem;
+  font-size: 1rem;
 }
 
 .btn-back:hover {
@@ -230,10 +236,49 @@ body {
 .payment-method {
   border-left: 5px solid #2196f3;
 }
+.notifications-container {
+  position: fixed;
+  bottom: 6rem;
+  right: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem; /* Espacio entre notificaciones */
+  z-index: 1000;
+}
+
+.notification {
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+.notification.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.notification.hidden {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.notification.added {
+  background-color: #4caf50; /* Verde */
+}
+
+.notification.removed {
+  background-color: #f44336; /* Rojo */
+}
 
 @media (max-width: 700px) {
   .cart-page {
     width: 95%;
+    margin: 3rem 1rem 1rem 1rem;
   }
 
   .mode-btn {
@@ -253,5 +298,12 @@ body {
   .total ul li {
     flex-direction: column;
     align-items: flex-start;
+  }
+}
+
+@media (max-width: 400px) {
+  .cart-page {
+    width: 95%;
+    margin: 3rem 0rem 0rem 0rem;
   }
 }

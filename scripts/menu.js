@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Actualizar la interfaz según el modo seleccionado
   if (mode === "local") {
     orderTitle.textContent = "Local";
-    callWaiterButton.classList.remove("hidden");
+    callWaiterButton.classList.remove("none");
     callWaiterButton.addEventListener("click", () => {
       const isConfirmed = confirm(
         "¿Estás seguro de que deseas llamar al mozo?"
@@ -110,13 +110,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Verificar que ambos parámetros existan
       if (mode && table) {
         // Construir la nueva URL con los parámetros
-        const newUrl = `carrito.html?mode=${mode}&table=${table}`;
+        const newUrl = `cart.html?mode=${mode}&table=${table}`;
 
         // Redirigir a la nueva URL
         window.location.href = newUrl;
       } else {
         // Construir la nueva URL con los parámetros
-        const newUrl = `carrito.html?mode=${mode}`;
+        const newUrl = `cart.html?mode=${mode}`;
 
         // Redirigir a la nueva URL
         window.location.href = newUrl;

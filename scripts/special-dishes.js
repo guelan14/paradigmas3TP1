@@ -1,42 +1,43 @@
 document.addEventListener("DOMContentLoaded", function () {
   //Crear Dinamicamente las especialidades
-  function loadSpecialItemsMenu() {
-    fetch("../special-dishes.json")
-      .then((response) => response.json())
-      .then((data) => {
-        const menuContainer = document.querySelector(".menu-container");
+  async function loadSpecialItemsMenu() {
+    try {
+      const response = await fetch("../special-dishes.json");
+      const data = await response.json();
+      const menuContainer = document.querySelector(".menu-container");
 
-        data.forEach((dish) => {
-          // Crear el contenedor del menú
-          const menuItem = document.createElement("div");
-          menuItem.className = "menu-item";
+      data.forEach((dish) => {
+        // Crear el contenedor del menú
+        const menuItem = document.createElement("div");
+        menuItem.className = "menu-item";
 
-          // Crear y agregar la imagen
-          const img = document.createElement("img");
-          img.src = dish.image;
-          img.alt = dish.alt;
+        // Crear y agregar la imagen
+        const img = document.createElement("img");
+        img.src = dish.image;
+        img.alt = dish.alt;
 
-          // Crear y agregar el nombre del plato
-          const name = document.createElement("h3");
-          name.textContent = dish.name;
+        // Crear y agregar el nombre del plato
+        const name = document.createElement("h3");
+        name.textContent = dish.name;
 
-          // Crear y agregar la descripción del plato
-          const description = document.createElement("p");
-          description.textContent = "Click para más info";
+        // Crear y agregar la descripción del plato
+        const description = document.createElement("p");
+        description.textContent = "Click para más info";
 
-          // Añadir la imagen, nombre y descripción al contenedor del menú
-          menuItem.appendChild(img);
-          menuItem.appendChild(name);
-          menuItem.appendChild(description);
+        // Añadir la imagen, nombre y descripción al contenedor del menú
+        menuItem.appendChild(img);
+        menuItem.appendChild(name);
+        menuItem.appendChild(description);
 
-          // Añadir un manejador de eventos de clic al plato
-          menuItem.addEventListener("click", () => showPopup(dish));
+        // Añadir un manejador de eventos de clic al plato
+        menuItem.addEventListener("click", () => showPopup(dish));
 
-          // Añadir el contenedor del menú a la sección
-          menuContainer.appendChild(menuItem);
-        });
-      })
-      .catch((error) => console.error("Error loading JSON:", error));
+        // Añadir el contenedor del menú a la sección
+        menuContainer.appendChild(menuItem);
+      });
+    } catch (error) {
+      console.error("Error loading JSON:", error);
+    }
   }
 
   function showPopup(dish) {

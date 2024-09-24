@@ -1,65 +1,50 @@
-// Ruta al archivo JSON
-const jsonFilePath = "path/to/tables.json";
-
-// Cargar el estado de las mesas desde el archivo JSON
-async function loadTableStatus() {
-  const response = await fetch(jsonFilePath);
-  const data = await response.json();
-  return data.tables;
+async function loadTables() {
+  try {
+    const response = await fetch("../tables.json");
+    const data = await response.json();
+    renderTables(data.tables);
+  } catch (error) {
+    console.error("Error loading tables:", error);
+  }
 }
 
-// Guardar el estado de las mesas en el archivo JSON
-async function saveTableStatus(tables) {
-  // Aquí debes implementar la lógica para guardar el estado en el archivo JSON
-  // En un entorno de desarrollo local, esto normalmente se hace en el servidor
-  // Por ejemplo, con Node.js podrías usar el módulo `fs` para escribir en el archivo
-}
+function renderTables(tables) {
+  const tablesContainer = document.querySelector(".tables-container");
+  tablesContainer.innerHTML = ""; // Limpiar el contenedor
 
-// Actualizar la UI de las mesas
-function updateTableUI(tables) {
-  const tableElements = document.querySelectorAll(".table");
+  tables.forEach((table) => {
+    const tableLink = document.createElement("a");
+    tableLink.href = `menu.html?mode=local&table=${table.id}`;
+    tableLink.className = `table ${table.status}`;
 
-  tableElements.forEach((table) => {
-    const tableId = parseInt(table.getAttribute("data-table-id"));
-    const tableStatus = tables.find((t) => t.id === tableId).status;
+    const img = document.createElement("img");
+    img.src = `../imagenes/${
+      table.status === "free" ? "freeTable.svg" : "occupiedTable.svg"
+    }`;
+    img.alt = table.status === "free" ? "Mesa Libre" : "Mesa Ocupada";
 
-    if (tableStatus === "occupied") {
-      table.classList.add("occupied");
-      table.classList.remove("free");
-    } else {
-      table.classList.add("free");
-      table.classList.remove("occupied");
-    }
-  });
-}
+    const tableNumber = document.createElement("span");
+    tableNumber.className = "table-number";
+    tableNumber.textContent = `Mesa ${table.id}`;
 
-// Cambiar el estado de la mesa al hacer clic
-function setupTableClickListeners(tables) {
-  const tableElements = document.querySelectorAll(".table");
+    tableLink.appendChild(img);
+    tableLink.appendChild(tableNumber);
 
-  tableElements.forEach((table) => {
-    table.addEventListener("click", () => {
-      const tableId = parseInt(table.getAttribute("data-table-id"));
-      const tableData = tables.find((t) => t.id === tableId);
-
-      if (tableData.status === "free") {
-        tableData.status = "occupied";
+    // Agregar el evento de clic para cambiar el estado de la mesa
+    tableLink.addEventListener("click", (event) => {
+      if (table.status === "free") {
+        // Cambiar el estado a "occupied"
+        table.status = "occupied";
       } else {
-        tableData.status = "free";
+        event.preventDefault(); // Evitar el enlace si la mesa está ocupada
+        alert(`Mesa ${table.id} ya está ocupada.`); // Mostrar un mensaje de alerta
       }
-
-      updateTableUI(tables);
-      saveTableStatus(tables);
+      renderTables(tables); // Volver a renderizar las mesas
     });
+
+    tablesContainer.appendChild(tableLink);
   });
 }
 
-// Inicializar la aplicación
-async function init() {
-  const tables = await loadTableStatus();
-  updateTableUI(tables);
-  setupTableClickListeners(tables);
-}
-
-// Llamar a la función de inicialización cuando el documento esté listo
-document.addEventListener("DOMContentLoaded", init);
+// Cargar las mesas cuando se carga el documento
+document.addEventListener("DOMContentLoaded", loadTables);

@@ -64,10 +64,10 @@ html {
   background-color: #0056b3;
 }
 
-.menu-header {
+.menu-nav {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
 }
 
 .tab {
@@ -90,7 +90,7 @@ html {
   color: #ffffff;
 }
 
-.menu {
+.menu-container {
   margin-right: 2rem;
   display: flex;
   flex-direction: column;
@@ -183,12 +183,6 @@ html {
   margin-top: 10px;
 }
 
-.menu-header {
-  display: flex;
-  justify-content: space-around;
-  margin-bottom: 20px;
-}
-
 .button-container {
   display: flex;
   justify-content: flex-end;
@@ -201,7 +195,7 @@ html {
   font-weight: 800;
 }
 
-.menu-header button {
+.menu-container button {
   font-size: small;
   border: none;
   cursor: pointer;
@@ -263,6 +257,10 @@ html {
   font-size: 1rem;
   align-items: center;
   margin-bottom: 0.5rem;
+}
+
+#cart-total ul {
+  list-style-type: none;
 }
 
 .order-header p {
@@ -413,6 +411,10 @@ html {
   visibility: hidden;
 }
 
+.none {
+  display: none;
+}
+
 .notifications-container {
   position: fixed;
   bottom: 6rem;
@@ -506,6 +508,7 @@ html {
     font-weight: 600;
     cursor: pointer;
     transition: background-color 0.3s ease, transform 0.2s ease;
+    text-decoration: none;
   }
 
   .btn-cart:hover {
@@ -573,7 +576,9 @@ html {
     flex-direction: column; /* Cambiar la dirección del flex para apilar elementos verticalmente */
   }
 
-  .menu {
+  .menu-nav {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%; /* Hacer que el menú ocupe todo el ancho disponible */
     margin-right: 0; /* Eliminar margen derecho para que ocupe el 100% del ancho */
   }
@@ -584,7 +589,7 @@ html {
     margin-top: 1rem; /* Añadir margen superior para separar el menú del área de pedidos */
   }
 
-  .menu-header {
+  .menu-container {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;

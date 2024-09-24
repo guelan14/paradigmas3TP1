@@ -14,6 +14,7 @@
 .back-arrow {
   font-size: 24px;
   color: #ffffff;
+  display: inline-flex;
   text-decoration: none;
   position: relative; /* Necesario para el efecto de movimiento */
   transition: color 0.3s ease, transform 0.3s ease; /* Suaviza el cambio de color y movimiento */
