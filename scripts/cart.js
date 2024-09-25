@@ -137,9 +137,9 @@ function loadCart() {
 function updateCartUI() {
   const cartItemsContainer = document.getElementById("cart-items");
   const cartTotalAmount = document.getElementById("cart-total-amount");
-  const subtotalElements = document.querySelectorAll(".total-amount"); // Busca todos los elementos con la clase "total-amount"
-  const shippingCostDisplay = document.getElementById("shipping-cost"); // Para el costo de envío
-  const serviceFeeDisplay = document.getElementById("service-fee"); // Para la tarifa de servicio
+  const subtotalElements = document.querySelectorAll(".total-amount");
+  const shippingCostDisplay = document.getElementById("shipping-cost");
+  const serviceFeeDisplay = document.getElementById("service-fee");
 
   cartItemsContainer.innerHTML = "";
 

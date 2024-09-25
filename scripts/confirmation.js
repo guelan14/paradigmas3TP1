@@ -2,6 +2,7 @@
 function goBack() {
   window.history.back(); // Regresa a la página anterior
 }
+
 function loadConfirmation() {
   const storedCart = localStorage.getItem("cart");
   const storedDeliveryMode = localStorage.getItem("deliveryMode");

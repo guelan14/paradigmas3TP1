@@ -37,14 +37,15 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // Cargar datos del menú
-  function loadMenu() {
-    fetch("../menu.json")
-      .then((response) => response.json())
-      .then((data) => {
-        menuData = data;
-        filterMenu("entradas");
-      })
-      .catch((error) => console.error("Error loading menu:", error));
+  async function loadMenu() {
+    try {
+      const response = await fetch("../menu.json");
+      const data = await response.json();
+      menuData = data;
+      filterMenu("entradas");
+    } catch (error) {
+      console.error("Error loading menu:", error);
+    }
   }
 
   // Filtrar menú por categoría
