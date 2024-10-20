@@ -15,7 +15,7 @@
     <header>
       <nav class="navbar">
         <div class="navbar-container">
-          <a href="../index.html" class="logo">PixFood</a>
+          <a href="../index.php" class="logo">PixFood</a>
         </div>
       </nav>
     </header>
@@ -78,7 +78,7 @@
             </ul>
           </div>
           <div class="order-actions">
-            <a href="cart.html" class="send-order"> Ir al Carrito </a>
+            <a href="cart.php" class="send-order"> Ir al Carrito </a>
           </div>
         </aside>
         <div class="notifications-container"></div>
@@ -87,7 +87,7 @@
         <div class="total">
           Subtotal del pedido: <span class="total-amount">$0.00</span>
         </div>
-        <a href="cart.html" class="btn-cart">Ir al carrito</a>
+        <a href="cart.php" class="btn-cart">Ir al carrito</a>
       </div>
     </div>
     <script src="../scripts/cart.js"></script>

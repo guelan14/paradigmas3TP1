@@ -21,7 +21,7 @@
     <header>
       <nav class="navbar">
         <div class="navbar-container">
-          <a href="index.html" class="logo">PixFood</a>
+          <a href="index.php" class="logo">PixFood</a>
           <button class="hamburger" aria-label="Abrir menú">
             <i class="fas fa-bars"></i>
           </button>
@@ -41,10 +41,10 @@
           <h1>PixFood</h1>
           <p>Una experiencia inolvidable</p>
           <div class="cta-buttons">
-            <a href="pages/menu.html?mode=delivery" class="btn"
+            <a href="pages/menu.php?mode=delivery" class="btn"
               >Pedir Delivery</a
             >
-            <a href="pages/tables.html" class="btn">Estoy en el Local</a>
+            <a href="pages/tables.php" class="btn">Estoy en el Local</a>
           </div>
         </div>
       </section>
@@ -115,7 +115,7 @@
       <section id="delivery" class="info-section">
         <h2>Servicio de Delivery</h2>
         <p>Haz tu pedido y disfrútalo en la comodidad de tu hogar.</p>
-        <a href="pages/menu.html?mode=delivery" class="btn">Ir a Delivery</a>
+        <a href="pages/menu.php?mode=delivery" class="btn">Ir a Delivery</a>
       </section>
 
       <section id="location" class="info-section">

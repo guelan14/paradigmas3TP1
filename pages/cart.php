@@ -55,7 +55,7 @@
               <li>Total: <span id="cart-total-amount"></span></li>
             </ul>
           </div>
-          <a href="confirmation.html" id="checkout" class="checkout-btn"
+          <a href="confirmation.php" id="checkout" class="checkout-btn"
             >Ir a Pagar</a
           >
           <!-- Botón de enviar orden (oculto por defecto) -->
