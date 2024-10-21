@@ -1,0 +1,45 @@
+-- Tabla para los elementos del menú
+CREATE TABLE menu_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(255) NOT NULL,
+    image VARCHAR(255),
+    category VARCHAR(255) NOT NULL,
+    price DECIMAL(10, 2) NOT NULL,
+    description TEXT
+);
+
+-- Tabla para las mesas
+CREATE TABLE tables (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    status ENUM('occupied', 'free') NOT NULL
+);
+
+-- Tabla para los pedidos
+CREATE TABLE orders (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    table_id BIGINT,
+    type ENUM('delivery', 'local') NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    status ENUM('pending', 'completed', 'cancelled') NOT NULL,
+    FOREIGN KEY (table_id) REFERENCES tables(id)
+);
+
+-- Tabla para los artículos de los pedidos
+CREATE TABLE order_items (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    order_id BIGINT,
+    food_id BIGINT,
+    quantity INT NOT NULL,
+    FOREIGN KEY (order_id) REFERENCES orders(id),
+    FOREIGN KEY (food_id) REFERENCES menu_items(id)
+);
+
+-- Tabla para los platos especiales
+CREATE TABLE special_dishes (
+    id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    alt VARCHAR(255),
+    ingredients TEXT,
+    youtube_link VARCHAR(255),
+    food_id BIGINT,
+    FOREIGN KEY (food_id) REFERENCES menu_items(id)
+);
