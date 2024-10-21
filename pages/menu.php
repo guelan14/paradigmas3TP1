@@ -67,7 +67,21 @@
               Llamar al mozo
             </button>
           </header>
+  <?php 
+  include "../modelo/conexion.php";
+  $sql = $conexion->query("SELECT * FROM menu_items");
 
+  while ($datos = $sql->fetch_object()) { ?>
+    <tr>
+      <td><?php echo $datos->name; ?></td>
+      <td><?php echo $datos->image; ?></td>
+
+
+    </tr>
+  <?php 
+  }
+  ?>
+  
           <section id="cart">
             <div id="cart-items"></div>
           </section>
@@ -92,5 +106,36 @@
     </div>
     <script src="../scripts/cart.js"></script>
     <script src="../scripts/menu.js"></script>
-  </body>
+  </body><?php
+include "../modelo/conexion.php"; // Conectar a la base de datos
+$sql = $conexion->query("SELECT * FROM menu_items"); // Consulta para obtener los datos
+
+// Verificar si hay resultados
+if ($sql->num_rows > 0) {
+    echo '<div class="menu-items">';
+    // Recorrer los resultados de la base de datos y generar HTML dinámicamente
+    while ($datos = $sql->fetch_object()) {
+        echo '
+        <div class="menu-item">
+            <div class="item-image">
+                <img src="' . $datos->image . '" alt="' . $datos->name . '" />
+            </div>
+            <div class="item-info">
+                <h2>' . $datos->name . '</h2>
+                <div class="description">
+                    <p>' . $datos->description . '</p>
+                </div>
+                <div class="button-container">
+                    <p class="price">$' . $datos->price . '</p>
+                    <button class="btn-minus">-</button>
+                    <button class="btn-plus">+</button>
+                </div>
+            </div>
+        </div>';
+    }
+    echo '</div>';
+} else {
+    echo '<p>No se encontraron elementos en el menú.</p>';
+}
+?>
 </html>
