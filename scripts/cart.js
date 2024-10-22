@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let deliveryButton, pickupButton;
 
   // Verificar la URL para decidir si estamos en la página del carrito
-  if (window.location.pathname.includes("cart.php")) {
+  if (window.location.pathname.includes("cart.html")) {
     deliveryButton = document.getElementById("delivery");
     pickupButton = document.getElementById("pickup");
     cartHeader = document.querySelector(".cart-header");

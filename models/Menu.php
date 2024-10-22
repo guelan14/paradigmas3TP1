@@ -23,7 +23,7 @@ class Menu {
                     'name' => $datos->name,
                     'image' => $this->imagePath . $datos->image,
                     'description' => $datos->description,
-                    'price' => $datos->price
+                    'price' =>floatval($datos->price)
                 ];
             }
         }
