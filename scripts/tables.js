@@ -14,7 +14,7 @@ function renderTables(tables) {
 
   tables.forEach((table) => {
     const tableLink = document.createElement("a");
-    tableLink.href = `menu.html?mode=local&table=${table.id}`;
+    tableLink.href = `menu.php?mode=local&table=${table.id}`;
     tableLink.className = `table ${table.status}`;
 
     const img = document.createElement("img");

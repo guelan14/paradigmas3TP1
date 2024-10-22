@@ -39,10 +39,11 @@ document.addEventListener("DOMContentLoaded", function () {
   // Cargar datos del menú
   async function loadMenu() {
     try {
-      const response = await fetch("../menu.json");
+      const response = await fetch("../controllers/MenuController.php");
       const data = await response.json();
       menuData = data;
       filterMenu("entradas");
+      console.log(menuData);
     } catch (error) {
       console.error("Error loading menu:", error);
     }
@@ -111,13 +112,13 @@ document.addEventListener("DOMContentLoaded", function () {
       // Verificar que ambos parámetros existan
       if (mode && table) {
         // Construir la nueva URL con los parámetros
-        const newUrl = `cart.html?mode=${mode}&table=${table}`;
+        const newUrl = `cart.php?mode=${mode}&table=${table}`;
 
         // Redirigir a la nueva URL
         window.location.href = newUrl;
       } else {
         // Construir la nueva URL con los parámetros
-        const newUrl = `cart.html?mode=${mode}`;
+        const newUrl = `cart.php?mode=${mode}`;
 
         // Redirigir a la nueva URL
         window.location.href = newUrl;

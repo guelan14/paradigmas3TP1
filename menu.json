@@ -2,7 +2,7 @@
   "entradas": [
     {
       "name": "Alitas de Pollo",
-      "image": "/imagenes/ensaladasummer.png",
+      "image": "imagenes/ensaladasummer.png",
       "category": "entradas",
       "price": 8.99,
       "description": "Jugosas alitas de pollo marinadas y cocinadas a la perfección, acompañadas de salsa a elegir."

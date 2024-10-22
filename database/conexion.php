@@ -7,5 +7,4 @@ if ($conexion->connect_error) {
 }
 
 $conexion->set_charset("utf8");
-echo "Conexión exitosa";
 ?>
