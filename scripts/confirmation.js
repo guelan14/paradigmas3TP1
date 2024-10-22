@@ -70,7 +70,7 @@ if (checkoutButton) {
 
       try {
         // Enviar datos a PHP
-        const response = await fetch("process_order.php", {
+        const response = await fetch("../controllers/process_order.php", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -87,7 +87,7 @@ if (checkoutButton) {
             localStorage.removeItem("cart"); // Opcional: vaciar el carrito
             localStorage.removeItem("deliveryMode");
             // Redireccionar a la página de confirmación o a la página de inicio
-            window.location.href = "confirmation_page.php"; // Cambia esto a tu página de confirmación
+            window.location.href = "menu.php"; // página de confirmación
           } else {
             alert(
               "Error al procesar la orden: " +

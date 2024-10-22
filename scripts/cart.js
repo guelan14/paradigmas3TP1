@@ -10,10 +10,11 @@ function goBack() {
 
 // Añadir item al carrito
 function addToCart(item) {
-  if (cart[item.name]) {
-    cart[item.name].quantity += 1;
+  if (cart[item.id]) {
+    // Cambiar item.name por item.id
+    cart[item.id].quantity += 1; // Aumenta la cantidad
   } else {
-    cart[item.name] = { ...item, quantity: 1 };
+    cart[item.id] = { ...item, quantity: 1 }; // Usa el id como clave
   }
   updateCartUI();
   saveCart();
@@ -22,11 +23,12 @@ function addToCart(item) {
 
 // Quitar item del carrito
 function removeFromCart(item) {
-  if (cart[item.name]) {
-    if (cart[item.name].quantity > 1) {
-      cart[item.name].quantity -= 1;
+  if (cart[item.id]) {
+    // Cambiar item.name por item.id
+    if (cart[item.id].quantity > 1) {
+      cart[item.id].quantity -= 1;
     } else {
-      delete cart[item.name];
+      delete cart[item.id]; // Eliminar el artículo si la cantidad es 1
     }
     updateCartUI();
     saveCart();

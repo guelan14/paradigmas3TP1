@@ -25,6 +25,22 @@ if ($stmt) {
 
     if ($stmt->execute()) {
         $orderId = $stmt->insert_id; // Obtener el ID de la orden insertada
+
+        // Inserta los artículos del pedido
+        if (isset($data['items']) && is_array($data['items'])) {
+            $insertItemSql = "INSERT INTO order_items (order_id, food_id, quantity) VALUES (?, ?, ?)";
+            $itemStmt = $conn->prepare($insertItemSql);
+
+            foreach ($data['items'] as $item) {
+                $foodId = $item['id']; // Asegúrate de que tu carrito tenga esta información
+                $quantity = $item['quantity'];
+                
+                $itemStmt->bind_param("iii", $orderId, $foodId, $quantity);
+                $itemStmt->execute();
+            }
+            $itemStmt->close();
+        }
+
         echo json_encode(['orderId' => $orderId]); // Devolver el ID de la orden
     } else {
         echo json_encode(['error' => 'Error al insertar la orden: ' . $stmt->error]);
