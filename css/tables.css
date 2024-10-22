@@ -26,7 +26,7 @@ h1 {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  background-image: url(../imagenes/tables-background.avif);
+  background-image: url(../images/tables-background.avif);
   background-repeat: no-repeat;
   background-size: cover;
 }

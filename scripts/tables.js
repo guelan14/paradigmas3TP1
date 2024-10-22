@@ -18,7 +18,7 @@ function renderTables(tables) {
     tableLink.className = `table ${table.status}`;
 
     const img = document.createElement("img");
-    img.src = `../imagenes/${
+    img.src = `../images/${
       table.status === "free" ? "freeTable.svg" : "occupiedTable.svg"
     }`;
     img.alt = table.status === "free" ? "Mesa Libre" : "Mesa Ocupada";
