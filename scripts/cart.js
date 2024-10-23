@@ -10,25 +10,30 @@ function goBack() {
 
 // Añadir item al carrito
 function addToCart(item) {
+  // Verifica si el artículo ya está en el carrito
   if (cart[item.id]) {
-    // Cambiar item.name por item.id
-    cart[item.id].quantity += 1; // Aumenta la cantidad
+    cart[item.id].quantity += 1; // Incrementa la cantidad si ya está en el carrito
   } else {
-    cart[item.id] = { ...item, quantity: 1 }; // Usa el id como clave
+    // Añade el artículo al carrito con su id
+    cart[item.id] = {
+      name: item.name,
+      price: item.price,
+      quantity: 1,
+      id: item.id, // Almacena el id
+    };
   }
-  updateCartUI();
+  updateCartUI(); // Actualiza la interfaz del carrito
   saveCart();
-  showNotification(`${item.name} agregado al carrito`, "added");
+  showNotification(`${item.name} Añadido al carrito`, "add");
 }
 
 // Quitar item del carrito
 function removeFromCart(item) {
   if (cart[item.id]) {
-    // Cambiar item.name por item.id
     if (cart[item.id].quantity > 1) {
       cart[item.id].quantity -= 1;
     } else {
-      delete cart[item.id]; // Eliminar el artículo si la cantidad es 1
+      delete cart[item.id];
     }
     updateCartUI();
     saveCart();
@@ -85,7 +90,7 @@ document.addEventListener("DOMContentLoaded", function () {
         pickupButton.classList.add("active");
         deliveryButton.classList.remove("active");
         deliveryCost = 0; // Sin costo de entrega
-        localStorage.setItem("deliveryMode", "pickup"); // Guarda el modo en localStorage
+        localStorage.setItem("deliveryMode", "local"); // Guarda el modo en localStorage
         updateCartUI(); // Actualiza la interfaz del carrito
       });
     }
@@ -146,7 +151,7 @@ function updateCartUI() {
   cartItemsContainer.innerHTML = "";
 
   let total = 0;
-  for (const [name, item] of Object.entries(cart)) {
+  for (const [id, item] of Object.entries(cart)) {
     const cartItem = document.createElement("div");
     cartItem.className = "cart-item";
     cartItem.innerHTML = `

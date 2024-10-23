@@ -17,9 +17,10 @@ class Menu {
 
         while ($datos = $sql->fetch_object()) {
             // Agrupar por categoría
-            $category = strtolower($datos->category); // Asegúrate de que la categoría esté en minúsculas
+            $category = strtolower($datos->category); // categoría en minúsculas
             if (array_key_exists($category, $menuItems)) {
                 $menuItems[$category][] = [
+                    'id' => $datos->id,
                     'name' => $datos->name,
                     'image' => $this->imagePath . $datos->image,
                     'description' => $datos->description,

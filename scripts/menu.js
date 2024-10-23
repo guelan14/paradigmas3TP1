@@ -63,8 +63,8 @@ document.addEventListener("DOMContentLoaded", function () {
             <div class="description"><p>${item.description}<p/></div> 
             <div class="button-container">
               <p class="price">$${item.price}</p>
-              <button class="btn-minus">-</button>
-              <button class="btn-plus">+</button>
+              <button class="btn-minus" data-id="${item.id}">-</button>
+              <button class="btn-plus" data-id="${item.id}">+</button>
             </div>
           </div>
         `;
