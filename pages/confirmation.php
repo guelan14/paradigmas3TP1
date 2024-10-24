@@ -51,9 +51,10 @@
             <li>Total: <span id="cart-total-amount">$0.00</span></li>
           </ul>
         </div>
-        <a href="#" id="checkout" class="checkout-btn">Pagar</a>
+        <a href="#" id="checkout" class="send checkout-btn">Pagar</a>
       </section>
     </div>
     <script src="../scripts/confirmation.js"></script>
+    <script src="../scripts/sendOrder.js"></script>
   </body>
 </html>

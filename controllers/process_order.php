@@ -9,7 +9,7 @@ global $conexion; // Usa la variable de conexión
 $data = json_decode(file_get_contents('php://input'), true);
 
 // Verificar que los datos sean válidos
-if (!isset($data['items']) || !isset($data['deliveryMode'])) {
+if (!isset($data['items'])) {
     echo json_encode(['error' => 'Datos incompletos.']);
     exit();
 }
@@ -18,7 +18,7 @@ if (!isset($data['items']) || !isset($data['deliveryMode'])) {
 mysqli_begin_transaction($conexion);
 try {
     // Crear una nueva orden
-    $table_id = null; // Asigna el ID de la mesa si es necesario
+    $table_id = $data['selectedTable']; // Asigna el ID de la mesa 
     $type = $data['deliveryMode']; // 'delivery' o 'local'
     error_log("deliveryMode: " . $data['deliveryMode']);
 

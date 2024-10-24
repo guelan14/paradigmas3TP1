@@ -62,13 +62,20 @@
           <a
             href="javascript:void(0);"
             id="send-order"
-            class="checkout-btn hidden"
+            class="checkout-btn hidden send"
             >Enviar Orden</a
+          >
+           <a
+            href="javascript:void(0);"
+            id="leave-table"
+            class="checkout-btn hidden send"
+            >Retirarse</a
           >
           <div class="notifications-container"></div>
         </section>
       </div>
     </section>
     <script src="../scripts/cart.js"></script>
+    <script src="../scripts/sendOrder.js"></script>
   </body>
 </html>

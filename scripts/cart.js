@@ -68,6 +68,7 @@ function showNotification(message, type) {
 document.addEventListener("DOMContentLoaded", function () {
   const checkoutButton = document.getElementById("checkout");
   const sendOrderButton = document.getElementById("send-order");
+  const leaveTableButton = document.getElementById("leave-table");
   let deliveryButton, pickupButton;
 
   // Verificar la URL para decidir si estamos en la página del carrito
@@ -75,9 +76,9 @@ document.addEventListener("DOMContentLoaded", function () {
     deliveryButton = document.getElementById("delivery");
     pickupButton = document.getElementById("pickup");
     cartHeader = document.querySelector(".cart-header");
-
     // Solo se definen los eventos si los botones están presentes
     if (deliveryButton && pickupButton) {
+      localStorage.setItem("deliveryMode", "local");
       deliveryButton.addEventListener("click", () => {
         deliveryButton.classList.add("active");
         pickupButton.classList.remove("active");
@@ -93,6 +94,36 @@ document.addEventListener("DOMContentLoaded", function () {
         localStorage.setItem("deliveryMode", "local"); // Guarda el modo en localStorage
         updateCartUI(); // Actualiza la interfaz del carrito
       });
+
+      leaveTableButton.addEventListener("click", async () => {
+        localStorage.removeItem("cart"); // Opcional: vaciar el carrito
+        localStorage.removeItem("deliveryMode");
+        try {
+          const response = await fetch("../controllers/table_controller.php", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({ id: tableId, status: "free" }), // Cambiar a 'free'
+          });
+
+          const result = await response.json();
+
+          if (response.ok) {
+            alert(result.message); // Mensaje de éxito
+            tableDiv.setAttribute("data-status", "free"); // Actualizar el estado en la interfaz
+            tableDiv.classList.remove("occupied");
+            tableDiv.classList.add("free");
+          } else {
+            alert("Error al cambiar el estado de la mesa.");
+          }
+        } catch (error) {
+          console.error("Error en la conexión:", error);
+          alert("Hubo un problema al cambiar el estado de la mesa.");
+        }
+        // Redireccionar a la página de confirmación o a la página de inicio
+        window.location.href = "../index.php"; // página de confirmación
+      });
     }
     // Función para manejar el modo según la URL
     function handleMode() {
@@ -103,8 +134,10 @@ document.addEventListener("DOMContentLoaded", function () {
         console.log("Modo Local Activado");
         cartHeader.classList.add("hidden");
         checkoutButton.classList.add("hidden");
+
         sendOrderButton.classList.remove("hidden");
         sendOrderButton.style.display = "inline-flex";
+        leaveTableButton.style.display = "inline-flex";
       } else {
         cartHeader.classList.remove("hidden");
         checkoutButton.classList.remove("hidden");

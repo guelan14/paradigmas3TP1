@@ -12,7 +12,7 @@ class MenuController {
     }
 }
 
-// Verificar si es una llamada AJAX para listar items del menú
+// Verificar si es una llamada para listar items del menú
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $controller = new MenuController();
     $controller->getAllMenuItems();

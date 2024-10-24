@@ -41,6 +41,7 @@ function renderTables(tables) {
 
       // Si la mesa está libre, cambiar el estado a ocupado
       const newStatus = "occupied";
+      localStorage.setItem("selectedTableId", table.id);
 
       try {
         const response = await fetch("../controllers/TableController.php", {
