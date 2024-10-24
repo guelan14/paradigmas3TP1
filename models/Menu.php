@@ -30,4 +30,17 @@ class Menu {
         }
         return $menuItems;
     }
+    public function insertMenuItem($data) {
+        global $conexion;
+
+        // Preparar la consulta para insertar un nuevo ítem
+        $sql = "INSERT INTO menu_items (name, image, category, price, description) VALUES (?, ?, ?, ?, ?)";
+        $stmt = $conexion->prepare($sql);
+
+        // Asignar los parámetros
+        $stmt->bind_param("ssssd", $data['name'], $data['image'], $data['category'], $data['price'], $data['description']);
+        
+        // Ejecutar la consulta
+        return $stmt->execute();
+    }
 }

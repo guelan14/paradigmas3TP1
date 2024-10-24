@@ -24,6 +24,9 @@
                     
                     <label for="category">Categoría:</label>
                     <input type="text" id="category" required>
+
+                    <label for="image">Imagen:</label>
+                    <input type="text" id="image" required>
                     
                     <label for="price">Precio:</label>
                     <input type="number" id="price" step="0.01" required>

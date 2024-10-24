@@ -3,7 +3,6 @@ async function loadMenuItems() {
   try {
     const response = await fetch("../controllers/MenuController.php");
     const menuItems = await response.json();
-    console.log(menuItems);
 
     const menuListBody = document.getElementById("menu-list-body");
     menuListBody.innerHTML = ""; // Limpiar la lista antes de cargar
@@ -30,17 +29,16 @@ async function loadMenuItems() {
 
 // Función para agregar un nuevo item del menú
 async function addMenuItem(event) {
-  event.preventDefault();
-
   const newItem = {
     name: document.getElementById("name").value,
+    image: document.getElementById("image").value,
     category: document.getElementById("category").value,
     price: parseFloat(document.getElementById("price").value),
     description: document.getElementById("description").value,
   };
 
   try {
-    const response = await fetch("api/menu-items", {
+    const response = await fetch("../controllers/MenuController.php", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -55,6 +53,7 @@ async function addMenuItem(event) {
       console.error("Error al agregar item:", response.statusText);
     }
   } catch (error) {
+    console.log(error);
     console.error("Error al agregar item:", error);
   }
 }

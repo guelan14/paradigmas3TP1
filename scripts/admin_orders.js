@@ -1,7 +1,7 @@
 // Función para cargar las órdenes desde la base de datos
 async function loadOrders() {
   try {
-    const response = await fetch("api/orders"); // Cambia esta URL según tu configuración
+    const response = await fetch("../controllers/OrderController.php"); // Cambia esta URL según tu configuración
     const orders = await response.json();
 
     const orderList = document.getElementById("order-list");
