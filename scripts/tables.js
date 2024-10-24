@@ -1,8 +1,8 @@
 async function loadTables() {
   try {
-    const response = await fetch("../tables.json");
+    const response = await fetch("../controllers/TableController.php");
     const data = await response.json();
-    renderTables(data.tables);
+    renderTables(data);
   } catch (error) {
     console.error("Error loading tables:", error);
   }
@@ -30,16 +30,35 @@ function renderTables(tables) {
     tableLink.appendChild(img);
     tableLink.appendChild(tableNumber);
 
-    // Agregar el evento de clic para cambiar el estado de la mesa
-    tableLink.addEventListener("click", (event) => {
-      if (table.status === "free") {
-        // Cambiar el estado a "occupied"
-        table.status = "occupied";
-      } else {
-        event.preventDefault(); // Evitar el enlace si la mesa está ocupada
-        alert(`Mesa ${table.id} ya está ocupada.`); // Mostrar un mensaje de alerta
+    // Evento de clic para cambiar el estado de la mesa
+    tableLink.addEventListener("click", async (event) => {
+      // Evitar la redirección si la mesa está ocupada
+      if (table.status === "occupied") {
+        alert("Esta mesa está ocupada. No puedes entrar.");
+        event.preventDefault(); // Evitar el enlace
+        return; // Salir de la función
       }
-      renderTables(tables); // Volver a renderizar las mesas
+
+      // Si la mesa está libre, cambiar el estado a ocupado
+      const newStatus = "occupied";
+
+      try {
+        const response = await fetch("../controllers/TableController.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ id: table.id, status: newStatus }),
+        });
+
+        const result = await response.json();
+        alert(result.message);
+
+        // Redirigir al menú después de cambiar el estado
+        window.location.href = `menu.php?mode=local&table=${table.id}`;
+      } catch (error) {
+        console.error("Error updating table status:", error);
+      }
     });
 
     tablesContainer.appendChild(tableLink);

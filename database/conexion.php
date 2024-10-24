@@ -1,5 +1,5 @@
 <?php 
-$conexion = new mysqli("localhost", "root", "1234", "pixfood");
+$conexion = new mysqli("localhost", "root", "", "pixfood");
 
 // Verificar la conexión
 if ($conexion->connect_error) {
