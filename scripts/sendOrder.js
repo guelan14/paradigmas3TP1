@@ -31,10 +31,10 @@ if (checkoutButton) {
             alert(
               "Orden procesada exitosamente! ID de orden: " + result.orderId
             );
+            localStorage.setItem("orderId", result.orderId);
             localStorage.removeItem("cart"); // Opcional: vaciar el carrito
+            localStorage.removeItem("selectedTable");
             localStorage.removeItem("deliveryMode");
-            // Redireccionar a la página de confirmación o a la página de inicio
-            window.location.href = "menu.php"; // página de confirmación
           } else {
             alert(
               "Error al procesar la orden: " +

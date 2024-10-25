@@ -69,7 +69,7 @@
             href="javascript:void(0);"
             id="leave-table"
             class="checkout-btn hidden send"
-            >Retirarse</a
+            >Pagar y Retirarse</a
           >
           <div class="notifications-container"></div>
         </section>

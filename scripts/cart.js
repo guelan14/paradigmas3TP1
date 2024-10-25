@@ -96,33 +96,33 @@ document.addEventListener("DOMContentLoaded", function () {
       });
 
       leaveTableButton.addEventListener("click", async () => {
-        localStorage.removeItem("cart"); // Opcional: vaciar el carrito
-        localStorage.removeItem("deliveryMode");
-        try {
-          const response = await fetch("../controllers/table_controller.php", {
+        let orderId = localStorage.getItem("orderId"); // Obtener orderId del localStorage
+
+        if (orderId) {
+          fetch("../controllers/OrderController.php", {
+            // Cambia esto a la ruta de tu controlador
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
-            body: JSON.stringify({ id: tableId, status: "free" }), // Cambiar a 'free'
-          });
-
-          const result = await response.json();
-
-          if (response.ok) {
-            alert(result.message); // Mensaje de éxito
-            tableDiv.setAttribute("data-status", "free"); // Actualizar el estado en la interfaz
-            tableDiv.classList.remove("occupied");
-            tableDiv.classList.add("free");
-          } else {
-            alert("Error al cambiar el estado de la mesa.");
-          }
-        } catch (error) {
-          console.error("Error en la conexión:", error);
-          alert("Hubo un problema al cambiar el estado de la mesa.");
+            body: JSON.stringify({ orderId: orderId }), // Enviamos el orderId en el cuerpo de la solicitud
+          })
+            .then((response) => response.json())
+            .then((data) => {
+              // Manejar la respuesta del servidor
+              if (data.success) {
+                alert(data.message); // Muestra un mensaje de éxito
+              } else {
+                alert(data.message); // Muestra un mensaje de error
+              }
+            })
+            .catch((error) => {
+              console.error("Error:", error);
+              alert("Ocurrió un error al intentar actualizar el estado.");
+            });
+        } else {
+          alert("No se encontró el orderId en localStorage.");
         }
-        // Redireccionar a la página de confirmación o a la página de inicio
-        window.location.href = "../index.php"; // página de confirmación
       });
     }
     // Función para manejar el modo según la URL

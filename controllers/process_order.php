@@ -1,6 +1,5 @@
 <?php
 header("Content-Type: application/json");
-
 // Conectar a la base de datos
 include_once "../database/conexion.php"; // Asegúrate de que esta ruta sea correcta
 global $conexion; // Usa la variable de conexión
@@ -62,3 +61,4 @@ try {
     $conexion->close(); // Cerrar la conexión
 }
 ?>
+

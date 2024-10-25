@@ -31,10 +31,3 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
     $controller->obtenerMesas(); // Llamar al método correspondiente
 }
 
-// Verificar si la solicitud es para cambiar el estado
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $controller = new TableController($conexion); // Crear el controlador
-    $data = json_decode(file_get_contents('php://input'), true); // Obtener datos enviados en JSON
-    $controller->cambiarEstadoMesa($data['id'], $data['status']); // Llamar al método correspondiente
-}
-?>
